@@ -7,23 +7,3 @@ $font-color2: #4c4c4c;
 $font-color3: #808080;
 $font-color3: #b2b2b2;
 $shadow: 0 2px 4px 0 rgba(0, 0, 0, .12), 0 0 6px 0 rgba(0, 0, 0, .04);
-// 头部
-.mint-header{
-  background-color: #fff;
-  color:$font-color1;
-  height:80px;
-  font-size: 32px;
-  .mint-button-icon{
-    .mintui{
-      font-size: 36px;
-    }
-  }
-}
-// $msg
-.msg{
-  z-index: 8888;
-  .mint-toast-text{
-    font-size: 26px;
-  }
-}
-

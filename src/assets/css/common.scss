@@ -106,3 +106,22 @@ div, img, ul, li, input{
   left: 0;
   top: 0;
 }
+// 头部
+.mint-header{
+  background-color: #fff;
+  color:$font-color1;
+  height:80px;
+  font-size: 32px;
+  .mint-button-icon{
+    .mintui{
+      font-size: 36px;
+    }
+  }
+}
+// $msg
+.msg{
+  z-index: 8888;
+  .mint-toast-text{
+    font-size: 26px;
+  }
+}
