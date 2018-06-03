@@ -6,6 +6,11 @@ import $ from 'jquery'
 import cookie from './cookie'
 import {loginLose} from '../plugins/wbApp'
 
+// 请求公共配置
+axios.defaults.baseURL = Url.api
+axios.defaults.headers = {'Content-Type': 'application/x-www-form-urlencoded'}
+axios.defaults.timeout = 10000
+
 // 响应时拦截
 axios.interceptors.response.use(function (response) {
   if (Number(response.data.code) === 1000) {
@@ -137,17 +142,11 @@ export default {
       return false
     }
     var Data = this.prodata(data)
-    var isUrl = Url.api
     return new Promise((resolve, reject) => {
       axios({
         method: 'post',
-        baseURL: isUrl,
         url,
-        data: qs.stringify(Data, {arrayFormat: 'brackets'}),
-        timeout: 10000,
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
+        data: qs.stringify(Data, {arrayFormat: 'brackets'})
       }).then(data => resolve(data)).catch(error => {
         console.warn('error了---->', error)
       })
@@ -158,13 +157,8 @@ export default {
     return new Promise((resolve, reject) => {
       axios({
         method: 'get',
-        baseURL: Url.api,
         url,
-        params: Data, // get 请求时带的参数
-        timeout: 10000,
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
+        params: Data
       }).then(data => resolve(data)).catch(error => {
         console.warn('error了----->', error)
       })

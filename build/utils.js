@@ -54,10 +54,10 @@ exports.cssLoaders = function (options) {
   }
 
   // sass全局配置
-  function resolveResource(name) {
-    return path.resolve(__dirname, '../src/assets/css/' + name);
+  function resolveResource (name) {
+    return path.resolve(__dirname, '../src/assets/css/' + name)
   }
-  function generateSassResourceLoader() {
+  function generateSassResourceLoader () {
     var loaders = [
       cssLoader,
       px2remLoader,
@@ -68,7 +68,7 @@ exports.cssLoaders = function (options) {
           resources: path.resolve(__dirname, '../src/assets/css/basic.scss')
         }
       }
-    ];
+    ]
     if (options.extract) {
       return ExtractTextPlugin.extract({
         use: loaders,
