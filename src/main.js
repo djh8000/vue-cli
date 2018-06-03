@@ -8,7 +8,6 @@ import http from './config/http'
 import cookie from './config/cookie'
 import FastClick from 'fastclick'
 import Navigation from 'vue-navigation'
-import VueLazyload from 'vue-lazyload'
 import 'lib-flexible/flexible.js'
 import './plugins/mint-ui'
 import './assets/css/common.scss'
@@ -19,10 +18,6 @@ Vue.prototype.$cookie = cookie
 Vue.prototype.http = http
 Vue.prototype.back = wbBack
 Vue.use(Navigation, {router, store})
-Vue.use(VueLazyload, {
-  error: '/static/img/error.jpg',
-  loading: '/static/img/loading.gif'
-})
 Vue.config.productionTip = false
 
 window.vm = new Vue({

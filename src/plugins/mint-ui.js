@@ -15,8 +15,6 @@ export default (() => {
   Vue.component(Header.name, Header)
   // button
   Vue.component(Button.name, Button)
-  // 消息提示
-  Vue.component(Toast.name, Toast)
   // 弹出框组件
   Vue.component(Popup.name, Popup)
   // loding
